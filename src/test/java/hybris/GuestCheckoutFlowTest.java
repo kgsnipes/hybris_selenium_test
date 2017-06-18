@@ -1,10 +1,9 @@
 package hybris;
 
-import kg.hybris.actions.HybrisStorefrontNavigationAction;
-import kg.hybris.actions.HybrisUserAction;
-import kg.hybris.actions.ProductSearchHybrisUserAction;
+import kg.hybris.actions.*;
 import kg.hybris.config.AppConfig;
 
+import kg.hybris.flows.GuestCheckoutFlow;
 import kg.hybris.setup.HybrisBrowser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,16 +16,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfig.class})
-public class HomePageTest {
+public class GuestCheckoutFlowTest {
 
     @Autowired
-    HybrisBrowser hybrisBrowser;
+    GuestCheckoutFlow guestCheckoutFlow;
 
     @Test
-    public void loadHomepage()throws Exception
+    public void performGuestCheckoutFlowTest()throws Exception
     {
-        hybrisBrowser.executeAction(new HybrisStorefrontNavigationAction(hybrisBrowser,"yacceleratorstorefront/?site=apparel-uk"));
-        hybrisBrowser.executeAction(new ProductSearchHybrisUserAction(hybrisBrowser,"shirts"));
-        assert (true);
+        guestCheckoutFlow.performGuestCheckoutFlow();
+        Thread.sleep(5000);
+
+        throw new Exception("summa");
+        //assert (true);
     }
 }

@@ -1,5 +1,6 @@
 package kg.hybris.config;
 
+import kg.hybris.flows.GuestCheckoutFlow;
 import kg.hybris.setup.DefaultHybrisBrowser;
 import kg.hybris.setup.HybrisBrowser;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by kaushik on 6/18/2017.
@@ -42,7 +45,15 @@ public class AppConfig {
         // setting system property for Chrome browser
         System.setProperty("webdriver.chrome.driver",chromeDriverPath);
         // create Google Chrome instance and maximize it
-        return  new ChromeDriver(capability);
+        ChromeDriver chromeDriver= new ChromeDriver(capability);
+        chromeDriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+        return  chromeDriver;
+    }
+
+    @Bean
+    public GuestCheckoutFlow guestCheckoutFlow()
+    {
+        return new GuestCheckoutFlow();
     }
 
 

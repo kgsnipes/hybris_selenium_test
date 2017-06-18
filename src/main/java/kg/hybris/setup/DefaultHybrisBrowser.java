@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by kaushik on 6/18/2017.
  */
@@ -33,7 +35,6 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
     }
 
     public WebDriver getBrowser() throws Exception {
-
     return chromeDriver;
     }
 

@@ -3,6 +3,8 @@ package kg.hybris.actions;
 import kg.hybris.setup.HybrisBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 
 /**
@@ -25,8 +27,13 @@ public class ProductSearchHybrisUserAction extends AbstractHybrisUserAction impl
     {
         super.perform();
         WebDriver browser= getHybrisBrowser().getBrowser();
-        browser.findElement(By.id("js-site-search-input")).sendKeys(productSearchTerm);
-        browser.findElement(By.name("search_form_SearchBox")).submit();
+        WebElement searchTextBox=browser.findElement(By.id("js-site-search-input"));
+        if(searchTextBox!=null)
+        {
+            searchTextBox .sendKeys(productSearchTerm);
+            browser.findElement(By.name("search_form_SearchBox")).submit();
+        }
+
     }
 
     public String getName() {
