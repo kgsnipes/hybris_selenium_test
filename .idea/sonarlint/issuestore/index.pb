@@ -1,0 +1,25 @@
+
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+e
+5src\main\java\kg\hybris\actions\HybrisUserAction.java,1\2\121fcea24877d2a107d292fc72945dfc24ece16e
+P
+ src\main\java\kg\hybris\App.java,b\f\bf127913c08f268fce4fe8eb769f87b0a7914655
+u
+Esrc\main\java\kg\hybris\actions\HybrisStorefrontNavigationAction.java,9\e\9eddfe73a083f1866ffbaea9c0a81ba5fc5acdf9
+r
+Bsrc\main\java\kg\hybris\actions\ProductSearchHybrisUserAction.java,6\b\6b11137f803bf199dd879c6725f1d7d76d9760bd
+Z
+*src\main\resources\hybristester.properties,a\f\af005dbac3cb2d9de7b49a6cfab3cc2f49b9cb2a
+]
+-src\main\java\kg\hybris\config\URLConfig.java,d\b\db85a2228630101b74e7326662f5baf9d8e376c1
+m
+=src\main\java\kg\hybris\actions\AbstractHybrisUserAction.java,0\1\015eacb8e12d6215cdac137911bf45e1fbdcff72
+`
+0src\main\java\kg\hybris\setup\HybrisBrowser.java,8\d\8dd9951423abad8bd54046d533bc7b951440bb02
+]
+-src\main\java\kg\hybris\config\AppConfig.java,4\b\4bff2f613c7338ab3a79337d1e1ccdc2155bde8e
+g
+7src\main\java\kg\hybris\setup\DefaultHybrisBrowser.java,5\0\50656c8bfeaed66dbb82a9f9525462760374b700
+V
+&src\test\java\hybris\HomePageTest.java,e\6\e6935f03db4548cf1363992543ed81eaac71d8e2
