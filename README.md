@@ -10,9 +10,13 @@ To build selenium web-driver scripts we basically need:
 - Browser driver - i user the chrome driver available as a part of the repo.
 
 Below are the steps to get started:
-- start the hybris server with the B2C recipie installed. I used the hybris version 6.4.
+- start the hybris server with the OOTB B2C recipe installed. I used the hybris version 6.4.
 - download the repo and import the maven project using any IDE of choice.
 - change the path for the browser driver located in the file hybris_selenium_test/src/main/resources/hybristester.properties to the path on your 
   file system.
 - choose the hybris_selenium_test/src/test/java/hybris/GuestCheckoutFlowTest.java JUnit test class and run the performGuestCheckoutFlowTest()
   test.
+  
+  I have also added a screencast for the GuestCheckoutFlow that i have created for the OOTB B2C recipe. 
+  
+  Will keep working on this project to refactor the code as time allows.
