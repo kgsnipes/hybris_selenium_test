@@ -31,6 +31,7 @@ public class ProductSearchHybrisUserAction extends AbstractHybrisUserAction impl
         if(searchTextBox!=null)
         {
             searchTextBox .sendKeys(productSearchTerm);
+            Thread.sleep(2000);
             browser.findElement(By.name("search_form_SearchBox")).submit();
         }
 
