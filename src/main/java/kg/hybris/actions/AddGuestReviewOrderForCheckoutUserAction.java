@@ -2,10 +2,7 @@ package kg.hybris.actions;
 
 import kg.hybris.dto.Payment;
 import kg.hybris.setup.HybrisBrowser;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,10 +13,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class AddGuestReviewOrderForCheckoutUserAction extends AbstractHybrisUserAction implements HybrisUserAction {
 
 
-    private Payment payment;
 
-    public AddGuestReviewOrderForCheckoutUserAction(HybrisBrowser browser, Payment payment) {
-        this.payment = payment;
+
+    public AddGuestReviewOrderForCheckoutUserAction(HybrisBrowser browser) {
         this.setHybrisBrowser(browser);
     }
 
@@ -35,16 +31,18 @@ public class AddGuestReviewOrderForCheckoutUserAction extends AbstractHybrisUser
         if(guestCheckoutOrderReview!=null)
         {
             WebElement termsCheckBox=browser.findElement(By.id("Terms1"));
-            if (termsCheckBox!=null)
+            System.out.println(termsCheckBox.getText());
+            System.out.println(termsCheckBox.getAttribute("innerHTML"));
+            if (termsCheckBox!=null && !termsCheckBox.isSelected())
             {
-
-                JavascriptExecutor js = (JavascriptExecutor)browser;
-                js.executeScript("$(document).find('#Terms1').attr('checked',true);");
-
+                termsCheckBox.click();
+                //JavascriptExecutor js = (JavascriptExecutor)browser;
+              //  js.executeScript("$(document).find('#Terms1').attr('checked',true);");
+                //termsCheckBox.sendKeys(Keys.SPACE);
                 browser.findElement(By.id("placeOrder")).click();
 
-                WebDriverWait waitForShippingMethod = new WebDriverWait(browser, 10000);
-                waitForShippingMethod.until(ExpectedConditions.visibilityOfElementLocated(By.className("checkout-success__body")));
+                WebDriverWait waitForOrderConfirmationPage = new WebDriverWait(browser, 10000);
+                waitForOrderConfirmationPage.until(ExpectedConditions.visibilityOfElementLocated(By.className("checkout-success__body")));
             }
 
 

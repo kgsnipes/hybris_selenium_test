@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a92b1f-fe12-416d-b701-5fc982d0d5b6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestDetailsForCheckoutLoginUserAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestPaymentDetailsForCheckoutUserAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestReviewOrderForCheckoutUserAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestShippingAddressForCheckoutUserAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestShippingMethodCheckoutUserAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/dto/Address.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/dto/Payment.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/015eacb8e12d6215cdac137911bf45e1fbdcff72" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/121fcea24877d2a107d292fc72945dfc24ece16e" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4bff2f613c7338ab3a79337d1e1ccdc2155bde8e" afterPath="" />
@@ -20,10 +13,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf127913c08f268fce4fe8eb769f87b0a7914655" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db85a2228630101b74e7326662f5baf9d8e376c1" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e6935f03db4548cf1363992543ed81eaac71d8e2" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/ProductSearchHybrisUserAction.java" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/ProductSearchHybrisUserAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestPaymentDetailsForCheckoutUserAction.java" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestPaymentDetailsForCheckoutUserAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestReviewOrderForCheckoutUserAction.java" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestReviewOrderForCheckoutUserAction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kg/hybris/flows/GuestCheckoutFlow.java" afterPath="$PROJECT_DIR$/src/main/java/kg/hybris/flows/GuestCheckoutFlow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hybristester.properties" afterPath="$PROJECT_DIR$/src/main/resources/hybristester.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/hybris/GuestCheckoutFlowTest.java" afterPath="$PROJECT_DIR$/src/test/java/hybris/GuestCheckoutFlowTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,8 +43,8 @@
       <file leaf-file-name="GuestCheckoutFlow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/flows/GuestCheckoutFlow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+            <state relative-caret-position="85">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuestCheckoutFlowTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GuestCheckoutFlowTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/hybris/GuestCheckoutFlowTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="379">
+              <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,19 +79,22 @@
       <file leaf-file-name="AddGuestPaymentDetailsForCheckoutUserAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestPaymentDetailsForCheckoutUserAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="43" column="79" lean-forward="false" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="79" />
+            <state relative-caret-position="442">
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddGuestReviewOrderForCheckoutUserAction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddGuestReviewOrderForCheckoutUserAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestReviewOrderForCheckoutUserAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
-              <folding />
+            <state relative-caret-position="266">
+              <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+              <folding>
+                <element signature="e#524#525#0" expanded="true" />
+                <element signature="e#570#571#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -229,7 +225,6 @@
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddtoCartFromProductSearchPageHybrisUserAction.java" />
         <option value="$PROJECT_DIR$/src/test/java/hybris/HomePageTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/config/AppConfig.java" />
-        <option value="$PROJECT_DIR$/src/test/java/hybris/GuestCheckoutFlowTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/NavigateToCartFromMiniCartLinkPageHybrisUserAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestDetailsForCheckoutLoginUserAction.java" />
@@ -237,11 +232,12 @@
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestShippingMethodCheckoutUserAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/dto/Address.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hybristester.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/hybris/flows/GuestCheckoutFlow.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestShippingAddressForCheckoutUserAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestPaymentDetailsForCheckoutUserAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/ProductSearchHybrisUserAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestPaymentDetailsForCheckoutUserAction.java" />
         <option value="$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestReviewOrderForCheckoutUserAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kg/hybris/flows/GuestCheckoutFlow.java" />
+        <option value="$PROJECT_DIR$/src/test/java/hybris/GuestCheckoutFlowTest.java" />
       </list>
     </option>
   </component>
@@ -935,21 +931,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 22h 13m 31s.xml">
-      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 22h 18m 29s.xml">
-      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 22h 19m 49s.xml">
-      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 22h 26m 23s.xml">
-      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 22h 35m 18s.xml">
-      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 22h 40m 21s.xml">
       <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
     </history-entry>
@@ -963,6 +944,21 @@
       <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 23h 00m 01s.xml">
+      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 23h 01m 48s.xml">
+      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 23h 05m 57s.xml">
+      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 23h 08m 06s.xml">
+      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 23h 13m 10s.xml">
+      <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GuestCheckoutFlowTest - 2017.06.18 at 23h 15m 50s.xml">
       <configuration name="GuestCheckoutFlowTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -990,7 +986,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1423,38 +1419,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/hybris/GuestCheckoutFlowTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/flows/GuestCheckoutFlow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestShippingAddressForCheckoutUserAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="35" column="69" lean-forward="false" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestPaymentDetailsForCheckoutUserAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="43" column="79" lean-forward="false" selection-start-line="43" selection-start-column="79" selection-end-line="43" selection-end-column="79" />
           <folding />
         </state>
       </provider>
@@ -1485,11 +1453,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestPaymentDetailsForCheckoutUserAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/actions/AddGuestReviewOrderForCheckoutUserAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
-          <folding />
+        <state relative-caret-position="266">
+          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+          <folding>
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#570#571#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kg/hybris/flows/GuestCheckoutFlow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/hybris/GuestCheckoutFlowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

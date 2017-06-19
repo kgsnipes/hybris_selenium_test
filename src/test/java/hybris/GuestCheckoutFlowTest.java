@@ -27,7 +27,7 @@ public class GuestCheckoutFlowTest {
         guestCheckoutFlow.performGuestCheckoutFlow();
         Thread.sleep(5000);
 
-        throw new Exception("summa");
-        //assert (true);
+     //   throw new Exception("summa");
+        assert (true);
     }
 }

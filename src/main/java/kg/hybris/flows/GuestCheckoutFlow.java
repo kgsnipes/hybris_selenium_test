@@ -35,6 +35,8 @@ public class GuestCheckoutFlow {
         hybrisBrowser.executeAction(new AddGuestShippingMethodCheckoutUserAction(hybrisBrowser,"standard-gross"));
         Thread.sleep(2000);
         hybrisBrowser.executeAction(new AddGuestPaymentDetailsForCheckoutUserAction(hybrisBrowser,payment));
+        Thread.sleep(2000);
+        hybrisBrowser.executeAction(new AddGuestReviewOrderForCheckoutUserAction(hybrisBrowser));
         Thread.sleep(10000);
     }
 }

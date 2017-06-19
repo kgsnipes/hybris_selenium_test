@@ -41,8 +41,8 @@ public class AddGuestPaymentDetailsForCheckoutUserAction extends AbstractHybrisU
             browser.findElement(By.name("card_cvNumber")) .sendKeys(this.payment.getCvv());
             browser.findElement(By.className("submit_silentOrderPostForm")).click();
 
-            WebDriverWait waitForShippingMethod = new WebDriverWait(browser, 20000);
-            waitForShippingMethod.until(ExpectedConditions.visibilityOfElementLocated(By.className("checkout-review")));
+            WebDriverWait waitForOrderReviewPage = new WebDriverWait(browser, 20000);
+            waitForOrderReviewPage.until(ExpectedConditions.visibilityOfElementLocated(By.id("placeOrderForm1")));
 
         }
 
