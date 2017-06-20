@@ -2,8 +2,8 @@
 hybris selenium test
 
 System Requirement:
-JDK 7 or higher
-Maven 3.0 or higher
+- JDK 7 or higher
+- Maven 3.0 or higher
 
 
 This project was an attempt to learn to perform automated testing for web applications using Selenium web-driver. As I was new to Selenium
