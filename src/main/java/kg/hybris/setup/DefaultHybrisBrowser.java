@@ -22,10 +22,40 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
     @Value("${hybrisbrowser.storefront.host}")
     private String HOST;
 
+    @Value("${hybrisbrowser.storefront.contextpath}")
+    private String contextPath;
+
+    @Value("${hybrisbrowser.action.sleepinterval}")
+    private Long sleepInterval;
+
     @Autowired
     private WebDriver chromeDriver;
 
+    private boolean isMaximized=false;
 
+    public Long getSleepInterval() {
+        return sleepInterval;
+    }
+
+    public void setSleepInterval(Long sleepInterval) {
+        this.sleepInterval = sleepInterval;
+    }
+
+    public boolean isMaximized() {
+        return isMaximized;
+    }
+
+    public void setMaximized(boolean maximized) {
+        isMaximized = maximized;
+    }
+
+    public String getContextPath() {
+        return contextPath;
+    }
+
+    public void setContextPath(String contextPath) {
+        this.contextPath = contextPath;
+    }
     public String getHOST() {
         return HOST;
     }
@@ -39,7 +69,21 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
     }
 
     public HybrisBrowser executeAction(HybrisUserAction userAction) throws Exception {
-        userAction.perform();
+        if(!this.isMaximized)
+        {
+            getBrowser().manage().window().maximize();
+            this.isMaximized=!this.isMaximized;
+        }
+        try {
+            userAction.perform();
+        }
+        catch (Exception ex)
+        {
+            System.out.println("------------------ Failed at "+userAction.getName()+" ------------------");
+            throw ex;
+        }
+        Thread.sleep(getSleepInterval());
+
         return this;
     }
 

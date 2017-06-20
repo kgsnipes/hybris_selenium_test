@@ -47,7 +47,7 @@ public class NavigateToCartFromMiniCartLinkPageHybrisUserAction extends Abstract
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("colorbox")));
             Thread.sleep(2000);
             System.out.println(browser.getCurrentUrl());
-            browser.get(getHybrisBrowser().getHOST()+getCartPageURL());
+            browser.get(getHybrisBrowser().getHOST()+getHybrisBrowser().getContextPath()+getCartPageURL());
             WebDriverWait waitForCartHeader = new WebDriverWait(browser, 10000);
             waitForCartHeader.until(ExpectedConditions.visibilityOfElementLocated(By.className("cart-header")));
 

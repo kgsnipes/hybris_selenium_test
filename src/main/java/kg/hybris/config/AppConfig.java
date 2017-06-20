@@ -29,6 +29,9 @@ public class AppConfig {
     @Value("${hybrisbrowser.acceptAllSSLCerts:false}")
     private boolean acceptAllSSLCerts;
 
+    @Value("${hybrisbrowser.script.timeout:10}")
+    private Integer scriptTimeout;
+
 
     @Bean
     public HybrisBrowser hybrisBrowser()
@@ -44,9 +47,8 @@ public class AppConfig {
         capability.setCapability(CapabilityType.ACCEPT_SSL_CERTS, acceptAllSSLCerts);
         // setting system property for Chrome browser
         System.setProperty("webdriver.chrome.driver",chromeDriverPath);
-        // create Google Chrome instance and maximize it
         ChromeDriver chromeDriver= new ChromeDriver(capability);
-        chromeDriver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+        chromeDriver.manage().timeouts().setScriptTimeout(scriptTimeout, TimeUnit.SECONDS);
         return  chromeDriver;
     }
 

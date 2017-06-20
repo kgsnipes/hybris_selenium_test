@@ -10,5 +10,6 @@ public interface HybrisBrowser {
     public WebDriver getBrowser() throws Exception;
     public HybrisBrowser executeAction(HybrisUserAction userAction) throws Exception;
     public String getHOST();
+    public String getContextPath();
 
 }
