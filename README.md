@@ -28,7 +28,7 @@ I additionally added Spring 4.0 core, to introduce DI, as I did not just want to
         .executeAction(new AddGuestPaymentDetailsForCheckoutUserAction(hybrisBrowser,payment))
         .executeAction(new AddGuestReviewOrderForCheckoutUserAction(hybrisBrowser));
 	
-	~~~~~~~~~
+
 	
 This not just allows me to express each step easily but will also help in reusing these indiviual actions required for creating other flows.
 
