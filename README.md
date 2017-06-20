@@ -1,6 +1,11 @@
 # hybris_selenium_test
 hybris selenium test
 
+System Requirement:
+JDK 7 or higher
+Maven 3.0 or higher
+
+
 This project was an attempt to learn to perform automated testing for web applications using Selenium web-driver. As I was new to Selenium
 i first tried to go through some blogs and Selenium documentation to get to know the concepts and also tried to stick to JAVA as the scripting
 language to start with(this approach helps out on the IDE for suggestions and autocomplete).
@@ -16,6 +21,23 @@ Below are the steps to get started:
   file system.
 - choose the hybris_selenium_test/src/test/java/hybris/GuestCheckoutFlowTest.java JUnit test class and run the performGuestCheckoutFlowTest()
   test.
+  
+  
+  Instructions for Build:
+	
+	To build with JUnit tests: 
+	 >mvn clean package
+
+	To skip running JUnit test while building 
+	>mvn clean package -Dmaven.test.skip=true
+	
+Instructions for execution:
+
+JUnit test execution:
+	>mvn test
+  or just to execute the guest checkout
+  >mvn -Dtest=GuestCheckoutFlowTest test
+
   
   I have also added a screencast for the GuestCheckoutFlow that i have created for the OOTB B2C recipe. 
   
