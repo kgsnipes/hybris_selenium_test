@@ -16,7 +16,7 @@ To build selenium web-driver scripts we basically need:
 
 I additionally added Spring 4.0 core, to introduce DI, as I did not just want to create a script but to create an automation testing script for hybris which would be modular and scalable in the future. I also wanted to make script more descriptive and understandable than just being a set of primitive steps that is not readable. For example the Guest Checkout flow that i have created like the snippet given below.
 
-  hybrisBrowser.executeAction(new HybrisStorefrontNavigationAction(hybrisBrowser,"/?site=apparel-uk"))
+ ` hybrisBrowser.executeAction(new HybrisStorefrontNavigationAction(hybrisBrowser,"/?site=apparel-uk"))
         .executeAction(new ProductSearchHybrisUserAction(hybrisBrowser,"shirts"))
         .executeAction(new AddtoCartFromProductSearchPageHybrisUserAction(hybrisBrowser,3))
         .executeAction(new NavigateToCartFromMiniCartLinkPageHybrisUserAction(hybrisBrowser,"/cart"))
@@ -25,7 +25,7 @@ I additionally added Spring 4.0 core, to introduce DI, as I did not just want to
         .executeAction(new AddGuestShippingAddressForCheckoutUserAction(hybrisBrowser,shippingAddress))
         .executeAction(new AddGuestShippingMethodCheckoutUserAction(hybrisBrowser,"standard-gross"))
         .executeAction(new AddGuestPaymentDetailsForCheckoutUserAction(hybrisBrowser,payment))
-        .executeAction(new AddGuestReviewOrderForCheckoutUserAction(hybrisBrowser));
+        .executeAction(new AddGuestReviewOrderForCheckoutUserAction(hybrisBrowser));`
 	
 This not just allows me to express each step easily but will also help in reusing these indiviual actions required for creating other flows.
 
