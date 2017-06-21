@@ -17,16 +17,16 @@ To build selenium web-driver scripts we basically need:
 I additionally added Spring 4.0 core, to introduce DI, as I did not just want to create a script but to create an automation testing script for hybris which would be modular and scalable in the future. I also wanted to make script more descriptive and understandable than just being a set of primitive steps that is not readable. For example the Guest Checkout flow that i have created like the snippet given below.
 
 ~~~~~~~
-  hybrisBrowser.executeAction(new HybrisStorefrontNavigationAction(hybrisBrowser,"/?site=apparel-uk"))
-        .executeAction(new ProductSearchHybrisUserAction(hybrisBrowser,"shirts"))
-        .executeAction(new AddtoCartFromProductSearchPageHybrisUserAction(hybrisBrowser,3))
-        .executeAction(new NavigateToCartFromMiniCartLinkPageHybrisUserAction(hybrisBrowser,"/cart"))
-        .executeAction(new ClickCheckoutButtonOnCartPageHybrisUserAction(hybrisBrowser))
-        .executeAction(new AddGuestDetailsForCheckoutLoginUserAction(hybrisBrowser,shippingAddress.getEmail()))
-        .executeAction(new AddGuestShippingAddressForCheckoutUserAction(hybrisBrowser,shippingAddress))
-        .executeAction(new AddGuestShippingMethodCheckoutUserAction(hybrisBrowser,"standard-gross"))
-        .executeAction(new AddGuestPaymentDetailsForCheckoutUserAction(hybrisBrowser,payment))
-        .executeAction(new AddGuestReviewOrderForCheckoutUserAction(hybrisBrowser));
+   hybrisBrowser.executeAction(new HybrisStorefrontNavigationAction("/?site=apparel-uk"))
+        .executeAction(new ProductSearchHybrisUserAction("shirts"))
+        .executeAction(new AddtoCartFromProductSearchPageHybrisUserAction(3))
+        .executeAction(new NavigateToCartFromMiniCartLinkPageHybrisUserAction("/cart"))
+        .executeAction(new ClickCheckoutButtonOnCartPageHybrisUserAction())
+        .executeAction(new AddGuestDetailsForCheckoutLoginUserAction(shippingAddress.getEmail()))
+        .executeAction(new AddGuestShippingAddressForCheckoutUserAction(shippingAddress))
+        .executeAction(new AddGuestShippingMethodCheckoutUserAction("standard-gross"))
+        .executeAction(new AddGuestPaymentDetailsForCheckoutUserAction(payment))
+        .executeAction(new AddGuestReviewOrderForCheckoutUserAction());
 	
 
 	
