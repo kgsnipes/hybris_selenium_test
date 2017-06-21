@@ -18,9 +18,9 @@ public class AddtoCartFromProductSearchPageHybrisUserAction extends AbstractHybr
 
     private Integer productsTOAdd;
 
-    public AddtoCartFromProductSearchPageHybrisUserAction(HybrisBrowser browser,  Integer productsTOAdd) {
+    public AddtoCartFromProductSearchPageHybrisUserAction(  Integer productsTOAdd) {
         this.productsTOAdd = productsTOAdd;
-        this.setHybrisBrowser(browser);
+
     }
 
 

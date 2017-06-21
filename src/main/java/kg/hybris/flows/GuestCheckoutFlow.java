@@ -25,16 +25,16 @@ public class GuestCheckoutFlow {
 
     public void performGuestCheckoutFlow()throws Exception
     {
-        hybrisBrowser.executeAction(new HybrisStorefrontNavigationAction(hybrisBrowser,"/?site=apparel-uk"))
-        .executeAction(new ProductSearchHybrisUserAction(hybrisBrowser,"shirts"))
-        .executeAction(new AddtoCartFromProductSearchPageHybrisUserAction(hybrisBrowser,3))
-        .executeAction(new NavigateToCartFromMiniCartLinkPageHybrisUserAction(hybrisBrowser,"/cart"))
-        .executeAction(new ClickCheckoutButtonOnCartPageHybrisUserAction(hybrisBrowser))
-        .executeAction(new AddGuestDetailsForCheckoutLoginUserAction(hybrisBrowser,shippingAddress.getEmail()))
-        .executeAction(new AddGuestShippingAddressForCheckoutUserAction(hybrisBrowser,shippingAddress))
-        .executeAction(new AddGuestShippingMethodCheckoutUserAction(hybrisBrowser,"standard-gross"))
-        .executeAction(new AddGuestPaymentDetailsForCheckoutUserAction(hybrisBrowser,payment))
-        .executeAction(new AddGuestReviewOrderForCheckoutUserAction(hybrisBrowser));
+        hybrisBrowser.executeAction(new HybrisStorefrontNavigationAction("/?site=apparel-uk"))
+        .executeAction(new ProductSearchHybrisUserAction("shirts"))
+        .executeAction(new AddtoCartFromProductSearchPageHybrisUserAction(3))
+        .executeAction(new NavigateToCartFromMiniCartLinkPageHybrisUserAction("/cart"))
+        .executeAction(new ClickCheckoutButtonOnCartPageHybrisUserAction())
+        .executeAction(new AddGuestDetailsForCheckoutLoginUserAction(shippingAddress.getEmail()))
+        .executeAction(new AddGuestShippingAddressForCheckoutUserAction(shippingAddress))
+        .executeAction(new AddGuestShippingMethodCheckoutUserAction("standard-gross"))
+        .executeAction(new AddGuestPaymentDetailsForCheckoutUserAction(payment))
+        .executeAction(new AddGuestReviewOrderForCheckoutUserAction());
         Thread.sleep(10000);
     }
 }

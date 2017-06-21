@@ -20,9 +20,9 @@ public class NavigateToCartFromMiniCartLinkPageHybrisUserAction extends Abstract
 
     private String cartPageURL;
 
-    public NavigateToCartFromMiniCartLinkPageHybrisUserAction(HybrisBrowser browser,String cartPageURL) {
+    public NavigateToCartFromMiniCartLinkPageHybrisUserAction(String cartPageURL) {
         this.cartPageURL=cartPageURL;
-        this.setHybrisBrowser(browser);
+
     }
 
     public String getCartPageURL() {

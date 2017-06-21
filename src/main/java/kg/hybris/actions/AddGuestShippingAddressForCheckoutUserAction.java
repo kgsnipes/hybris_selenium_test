@@ -17,9 +17,9 @@ public class AddGuestShippingAddressForCheckoutUserAction extends AbstractHybris
 
     private Address address;
 
-    public AddGuestShippingAddressForCheckoutUserAction(HybrisBrowser browser, Address address) {
+    public AddGuestShippingAddressForCheckoutUserAction( Address address) {
         this.address = address;
-        this.setHybrisBrowser(browser);
+
     }
 
 

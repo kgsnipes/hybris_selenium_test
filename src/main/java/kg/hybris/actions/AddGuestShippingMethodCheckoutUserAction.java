@@ -17,9 +17,9 @@ public class AddGuestShippingMethodCheckoutUserAction extends AbstractHybrisUser
 
     private String shippingMethod;
 
-    public AddGuestShippingMethodCheckoutUserAction(HybrisBrowser browser, String shippingMethod) {
+    public AddGuestShippingMethodCheckoutUserAction(String shippingMethod) {
         this.shippingMethod = shippingMethod;
-        this.setHybrisBrowser(browser);
+
     }
 
 

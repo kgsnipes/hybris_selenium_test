@@ -17,9 +17,9 @@ public class AddGuestPaymentDetailsForCheckoutUserAction extends AbstractHybrisU
 
     private Payment payment;
 
-    public AddGuestPaymentDetailsForCheckoutUserAction(HybrisBrowser browser, Payment payment) {
+    public AddGuestPaymentDetailsForCheckoutUserAction(Payment payment) {
         this.payment = payment;
-        this.setHybrisBrowser(browser);
+
     }
 
 

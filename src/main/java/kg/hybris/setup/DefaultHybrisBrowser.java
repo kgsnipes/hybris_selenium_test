@@ -75,6 +75,7 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
             this.isMaximized=!this.isMaximized;
         }
         try {
+            userAction.setHybrisBrowser(this);
             userAction.perform();
         }
         catch (Exception ex)

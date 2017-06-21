@@ -14,9 +14,9 @@ public class HybrisStorefrontNavigationAction extends AbstractHybrisUserAction i
 
     private String URL;
 
-    public HybrisStorefrontNavigationAction(HybrisBrowser browser,String URL) {
+    public HybrisStorefrontNavigationAction(String URL) {
         this.URL = URL;
-        this.setHybrisBrowser(browser);
+
     }
 
     public String getURL() {

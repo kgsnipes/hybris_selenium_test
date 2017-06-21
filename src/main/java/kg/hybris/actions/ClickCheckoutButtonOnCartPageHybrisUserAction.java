@@ -14,9 +14,9 @@ public class ClickCheckoutButtonOnCartPageHybrisUserAction extends AbstractHybri
 
 
 
-    public ClickCheckoutButtonOnCartPageHybrisUserAction(HybrisBrowser browser) {
+    public ClickCheckoutButtonOnCartPageHybrisUserAction() {
 
-        this.setHybrisBrowser(browser);
+
     }
 
 

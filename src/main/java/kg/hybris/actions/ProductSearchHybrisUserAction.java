@@ -15,9 +15,9 @@ public class ProductSearchHybrisUserAction extends AbstractHybrisUserAction impl
 
     private String productSearchTerm;
 
-    public ProductSearchHybrisUserAction(HybrisBrowser browser,String productSearchTerm) {
+    public ProductSearchHybrisUserAction(String productSearchTerm) {
         this.productSearchTerm = productSearchTerm;
-        this.setHybrisBrowser(browser);
+
     }
 
 

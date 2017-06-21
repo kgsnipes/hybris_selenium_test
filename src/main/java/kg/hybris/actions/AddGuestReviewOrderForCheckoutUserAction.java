@@ -15,8 +15,8 @@ public class AddGuestReviewOrderForCheckoutUserAction extends AbstractHybrisUser
 
 
 
-    public AddGuestReviewOrderForCheckoutUserAction(HybrisBrowser browser) {
-        this.setHybrisBrowser(browser);
+    public AddGuestReviewOrderForCheckoutUserAction() {
+
     }
 
 

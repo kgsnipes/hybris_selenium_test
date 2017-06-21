@@ -15,9 +15,8 @@ public class AddGuestDetailsForCheckoutLoginUserAction extends AbstractHybrisUse
 
     private String emailAddress;
 
-    public AddGuestDetailsForCheckoutLoginUserAction(HybrisBrowser browser, String emailAddress) {
+    public AddGuestDetailsForCheckoutLoginUserAction( String emailAddress) {
         this.emailAddress = emailAddress;
-        this.setHybrisBrowser(browser);
     }
 
 
@@ -43,4 +42,5 @@ public class AddGuestDetailsForCheckoutLoginUserAction extends AbstractHybrisUse
     public String getName() {
         return this.getClass().getSimpleName();
     }
+
 }
