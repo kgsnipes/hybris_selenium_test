@@ -14,6 +14,24 @@ To build selenium web-driver scripts we basically need:
 - Selenium Web-Driver API - Java SDK.
 - Browser driver - i user the chrome driver available as a part of the repo.
 
+I additionally added Spring 4.0 core, to introduce DI, as I did not just want to create a script but to create an automation testing script for hybris which would be modular and scalable in the future. I also wanted to make script more descriptive and understandable than just being a set of primitive steps that is not readable. For example the Guest Checkout flow that i have created like the snippet given below.
+
+~~~~~~~
+   hybrisBrowser.executeAction(new HybrisStorefrontNavigationAction("/?site=apparel-uk"))
+        .executeAction(new ProductSearchHybrisUserAction("shirts"))
+        .executeAction(new AddtoCartFromProductSearchPageHybrisUserAction(3))
+        .executeAction(new NavigateToCartFromMiniCartLinkPageHybrisUserAction("/cart"))
+        .executeAction(new ClickCheckoutButtonOnCartPageHybrisUserAction())
+        .executeAction(new AddGuestDetailsForCheckoutLoginUserAction(shippingAddress.getEmail()))
+        .executeAction(new AddGuestShippingAddressForCheckoutUserAction(shippingAddress))
+        .executeAction(new AddGuestShippingMethodCheckoutUserAction("standard-gross"))
+        .executeAction(new AddGuestPaymentDetailsForCheckoutUserAction(payment))
+        .executeAction(new AddGuestReviewOrderForCheckoutUserAction());
+	
+
+	
+This not just allows me to express each step easily but will also help in reusing these indiviual actions required for creating other flows.
+
 Below are the steps to get started:
 - start the hybris server with the OOTB B2C recipe installed. I used the hybris version 6.4.
 - download the repo and import the maven project using any IDE of choice.
@@ -41,4 +59,4 @@ JUnit test execution:
   
   I have also added a screencast for the GuestCheckoutFlow that i have created for the OOTB B2C recipe. 
   
-  Will keep working on this project to refactor the code as time allows.
+  Will keep working on this project to refactor the code as time permits.
