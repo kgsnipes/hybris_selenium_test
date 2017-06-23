@@ -1,10 +1,15 @@
 package hybris;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonReader;
+import kg.hybris.App;
 import kg.hybris.actions.*;
 import kg.hybris.config.AppConfig;
 
 import kg.hybris.flows.GuestCheckoutFlow;
 import kg.hybris.setup.HybrisBrowser;
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +23,21 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = {AppConfig.class})
 public class GuestCheckoutFlowTest {
 
+    private static final Logger LOG = Logger.getLogger(GuestCheckoutFlowTest.class);
+    @Autowired
+    HybrisBrowser hybrisBrowser;
+
     @Autowired
     GuestCheckoutFlow guestCheckoutFlow;
 
     @Test
     public void performGuestCheckoutFlowTest()throws Exception
     {
-        guestCheckoutFlow.performGuestCheckoutFlow();
+        hybrisBrowser.setFlow(guestCheckoutFlow);
+        guestCheckoutFlow.performFlow(hybrisBrowser);
+        Gson gson = new Gson();
+        LOG.info( gson.toJson(guestCheckoutFlow.getFlowResult()));
         Thread.sleep(5000);
-
-     //   throw new Exception("summa");
         assert (true);
     }
 }

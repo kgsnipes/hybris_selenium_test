@@ -21,10 +21,10 @@ public class ClickCheckoutButtonOnCartPageHybrisUserAction extends AbstractHybri
 
 
 
-    @Override
+
     public void perform()throws Exception
     {
-        super.perform();
+
         WebDriver browser= getHybrisBrowser().getBrowser();
         WebElement checkoutLink= browser.findElement(By.className("js-continue-checkout-button"));
         if(checkoutLink!=null)

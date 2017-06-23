@@ -24,10 +24,9 @@ public class AddGuestShippingMethodCheckoutUserAction extends AbstractHybrisUser
 
 
 
-    @Override
     public void perform()throws Exception
     {
-        super.perform();
+
         WebDriver browser= getHybrisBrowser().getBrowser();
 
         WebElement guestCheckoutShippingMethodForm=browser.findElement(By.id("selectDeliveryMethodForm"));

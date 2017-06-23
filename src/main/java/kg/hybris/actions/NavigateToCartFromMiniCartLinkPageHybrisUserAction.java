@@ -33,10 +33,10 @@ public class NavigateToCartFromMiniCartLinkPageHybrisUserAction extends Abstract
         this.cartPageURL = cartPageURL;
     }
 
-    @Override
+
     public void perform()throws Exception
     {
-        super.perform();
+
         WebDriver browser= getHybrisBrowser().getBrowser();
         WebElement miniCartLink= browser.findElement(By.className("js-mini-cart-link"));
         if(miniCartLink!=null)
@@ -46,7 +46,6 @@ public class NavigateToCartFromMiniCartLinkPageHybrisUserAction extends Abstract
             WebDriverWait wait = new WebDriverWait(browser, 10000);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("colorbox")));
             Thread.sleep(2000);
-            System.out.println(browser.getCurrentUrl());
             browser.get(getHybrisBrowser().getHOST()+getHybrisBrowser().getContextPath()+getCartPageURL());
             WebDriverWait waitForCartHeader = new WebDriverWait(browser, 10000);
             waitForCartHeader.until(ExpectedConditions.visibilityOfElementLocated(By.className("cart-header")));

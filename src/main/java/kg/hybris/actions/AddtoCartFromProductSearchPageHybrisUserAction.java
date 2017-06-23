@@ -24,11 +24,9 @@ public class AddtoCartFromProductSearchPageHybrisUserAction extends AbstractHybr
     }
 
 
-
-    @Override
     public void perform()throws Exception
     {
-        super.perform();
+
         WebDriver browser= getHybrisBrowser().getBrowser();
         List<WebElement> addTOCartForms= browser.findElements(By.className("add_to_cart_form"));
         Iterator<WebElement> iterator=addTOCartForms.iterator();

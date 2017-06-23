@@ -22,10 +22,10 @@ public class ProductSearchHybrisUserAction extends AbstractHybrisUserAction impl
 
 
 
-    @Override
+
     public void perform()throws Exception
     {
-        super.perform();
+
         WebDriver browser= getHybrisBrowser().getBrowser();
         WebElement searchTextBox=browser.findElement(By.id("js-site-search-input"));
         if(searchTextBox!=null)

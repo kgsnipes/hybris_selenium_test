@@ -20,11 +20,9 @@ public class AddGuestReviewOrderForCheckoutUserAction extends AbstractHybrisUser
     }
 
 
-
-    @Override
     public void perform()throws Exception
     {
-        super.perform();
+
         WebDriver browser= getHybrisBrowser().getBrowser();
 
         WebElement guestCheckoutOrderReview=browser.findElement(By.className("checkout-review"));

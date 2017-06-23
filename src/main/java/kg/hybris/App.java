@@ -1,6 +1,8 @@
 package kg.hybris;
 
+import kg.hybris.actions.AbstractHybrisUserAction;
 import kg.hybris.flows.GuestCheckoutFlow;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,13 +25,14 @@ import java.util.List;
 @ComponentScan(basePackages = { "kg.hybris.*" })
 public class App 
 {
+    private static final Logger LOG = Logger.getLogger(App.class);
     @Autowired
     GuestCheckoutFlow guestCheckoutFlow;
     public static void main( String[] args )throws  Exception
     {
-        System.out.println( "Run the test cases" );
 
-        new App().guestCheckoutFlow.performGuestCheckoutFlow();
+        LOG.info("PLEASE RUN THE TEST CASES");
+
     }
 
 }

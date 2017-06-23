@@ -1,5 +1,7 @@
 package kg.hybris.actions;
 
+import kg.hybris.dto.FlowActionResult;
+import kg.hybris.dto.HybrisFlowResult;
 import kg.hybris.setup.HybrisBrowser;
 
 /**
@@ -11,4 +13,9 @@ public interface HybrisUserAction {
     public String getName();
     public void setHybrisBrowser(HybrisBrowser browser);
     public HybrisBrowser getHybrisBrowser();
+    public void preActionActivities();
+    public void postActionActivities();
+    public void actionFailureActivites(Exception ex);
+    public void createHybrisActionResult(String actionName);
+    public FlowActionResult getActionResult();
 }

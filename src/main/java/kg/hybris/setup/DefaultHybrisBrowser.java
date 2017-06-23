@@ -1,6 +1,7 @@
 package kg.hybris.setup;
 
 import kg.hybris.actions.HybrisUserAction;
+import kg.hybris.flows.HybrisFlow;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -32,6 +33,7 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
     private WebDriver chromeDriver;
 
     private boolean isMaximized=false;
+    private HybrisFlow flow;
 
     public Long getSleepInterval() {
         return sleepInterval;
@@ -51,6 +53,14 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
 
     public String getContextPath() {
         return contextPath;
+    }
+
+    public HybrisFlow getFlow() {
+        return this.flow;
+    }
+
+    public void setFlow(HybrisFlow flow) {
+        this.flow=flow;
     }
 
     public void setContextPath(String contextPath) {

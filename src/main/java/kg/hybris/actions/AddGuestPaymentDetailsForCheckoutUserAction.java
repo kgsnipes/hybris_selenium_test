@@ -23,11 +23,9 @@ public class AddGuestPaymentDetailsForCheckoutUserAction extends AbstractHybrisU
     }
 
 
-
-    @Override
     public void perform()throws Exception
     {
-        super.perform();
+
         WebDriver browser= getHybrisBrowser().getBrowser();
 
         WebElement guestCheckoutPaymentForm=browser.findElement(By.id("silentOrderPostForm"));

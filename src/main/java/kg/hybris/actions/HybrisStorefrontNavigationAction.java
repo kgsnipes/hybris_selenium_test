@@ -27,10 +27,10 @@ public class HybrisStorefrontNavigationAction extends AbstractHybrisUserAction i
         this.URL = URL;
     }
 
-    @Override
+
     public void perform()throws Exception
     {
-        super.perform();
+
         getHybrisBrowser().getBrowser().get(getHybrisBrowser().getHOST()+getHybrisBrowser().getContextPath()+getURL());
     }
     public String getName() {

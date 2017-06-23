@@ -1,6 +1,7 @@
 package kg.hybris.setup;
 
 import kg.hybris.actions.HybrisUserAction;
+import kg.hybris.flows.HybrisFlow;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -11,5 +12,7 @@ public interface HybrisBrowser {
     public HybrisBrowser executeAction(HybrisUserAction userAction) throws Exception;
     public String getHOST();
     public String getContextPath();
+    public HybrisFlow getFlow();
+    public void setFlow(HybrisFlow flow);
 
 }
