@@ -34,7 +34,7 @@ public class AddGuestShippingMethodCheckoutUserAction extends AbstractHybrisUser
             new Select(browser.findElement(By.name("delivery_method"))).selectByValue(this.shippingMethod);
 
             browser.findElement(By.id("deliveryMethodSubmit")).click();
-
+            getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
             WebDriverWait waitForShippingMethod = new WebDriverWait(browser, 5000);
             waitForShippingMethod.until(ExpectedConditions.visibilityOfElementLocated(By.id("silentOrderPostForm")));
 

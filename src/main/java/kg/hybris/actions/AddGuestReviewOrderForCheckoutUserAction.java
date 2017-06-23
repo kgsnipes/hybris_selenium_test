@@ -38,7 +38,7 @@ public class AddGuestReviewOrderForCheckoutUserAction extends AbstractHybrisUser
               //  js.executeScript("$(document).find('#Terms1').attr('checked',true);");
                 //termsCheckBox.sendKeys(Keys.SPACE);
                 browser.findElement(By.id("placeOrder")).click();
-
+                getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
                 WebDriverWait waitForOrderConfirmationPage = new WebDriverWait(browser, 10000);
                 waitForOrderConfirmationPage.until(ExpectedConditions.visibilityOfElementLocated(By.className("checkout-success__body")));
             }

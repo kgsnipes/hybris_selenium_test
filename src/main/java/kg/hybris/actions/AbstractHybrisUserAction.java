@@ -2,6 +2,7 @@ package kg.hybris.actions;
 
 import kg.hybris.dto.ActionStatus;
 import kg.hybris.dto.FlowActionResult;
+import kg.hybris.services.ScreenshotReportingService;
 import kg.hybris.setup.HybrisBrowser;
 import org.apache.log4j.Logger;
 
@@ -32,6 +33,7 @@ public abstract class AbstractHybrisUserAction implements HybrisUserAction {
     public void postActionActivities(){
         getActionResult().setStatus(ActionStatus.COMPLETED);
         getActionResult().setEndTime(new Date());
+
     }
     public void actionFailureActivites(Exception ex){
         getActionResult().setStatus(ActionStatus.FAILED);

@@ -8,6 +8,7 @@ import kg.hybris.actions.*;
 import kg.hybris.config.AppConfig;
 
 import kg.hybris.flows.GuestCheckoutFlow;
+import kg.hybris.setup.BrowserDisplayMode;
 import kg.hybris.setup.HybrisBrowser;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -31,9 +32,32 @@ public class GuestCheckoutFlowTest {
     GuestCheckoutFlow guestCheckoutFlow;
 
     @Test
-    public void performGuestCheckoutFlowTest()throws Exception
+    public void performGuestCheckoutFlowTestDesktop()throws Exception
     {
+        hybrisBrowser.setBrowserDisplayMode(BrowserDisplayMode.DESKTOP);
+        guestCheckoutFlow.performFlow(hybrisBrowser);
+        Gson gson = new Gson();
+        LOG.info( gson.toJson(guestCheckoutFlow.getFlowResult()));
+        Thread.sleep(5000);
 
+        assert (true);
+    }
+
+    @Test
+    public void performGuestCheckoutFlowTestMobile()throws Exception
+    {
+        hybrisBrowser.setBrowserDisplayMode(BrowserDisplayMode.MOBILE);
+        guestCheckoutFlow.performFlow(hybrisBrowser);
+        Gson gson = new Gson();
+        LOG.info( gson.toJson(guestCheckoutFlow.getFlowResult()));
+        Thread.sleep(5000);
+        assert (true);
+    }
+
+    @Test
+    public void performGuestCheckoutFlowTestTablet()throws Exception
+    {
+        hybrisBrowser.setBrowserDisplayMode(BrowserDisplayMode.TABLET);
         guestCheckoutFlow.performFlow(hybrisBrowser);
         Gson gson = new Gson();
         LOG.info( gson.toJson(guestCheckoutFlow.getFlowResult()));

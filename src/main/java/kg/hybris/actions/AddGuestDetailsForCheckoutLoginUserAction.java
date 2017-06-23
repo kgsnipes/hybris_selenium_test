@@ -30,7 +30,9 @@ public class AddGuestDetailsForCheckoutLoginUserAction extends AbstractHybrisUse
         {
             browser.findElement(By.className("guestEmail")) .sendKeys(this.emailAddress);
             browser.findElement(By.className("confirmGuestEmail")) .sendKeys(this.emailAddress);
+            getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
             guestCheckoutLoginForm.submit();
+
             WebDriverWait wait = new WebDriverWait(browser, 5000);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("checkout-shipping")));
 

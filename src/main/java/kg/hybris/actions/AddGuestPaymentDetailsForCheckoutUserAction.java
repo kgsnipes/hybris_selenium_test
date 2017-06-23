@@ -38,7 +38,7 @@ public class AddGuestPaymentDetailsForCheckoutUserAction extends AbstractHybrisU
             new Select(browser.findElement(By.name("card_expirationYear"))).selectByValue(this.payment.getYear());
             browser.findElement(By.name("card_cvNumber")) .sendKeys(this.payment.getCvv());
             browser.findElement(By.className("submit_silentOrderPostForm")).click();
-
+            getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
             WebDriverWait waitForOrderReviewPage = new WebDriverWait(browser, 20000);
             waitForOrderReviewPage.until(ExpectedConditions.visibilityOfElementLocated(By.id("placeOrderForm1")));
 

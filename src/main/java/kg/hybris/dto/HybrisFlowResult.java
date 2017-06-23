@@ -9,12 +9,21 @@ import java.util.List;
 public class HybrisFlowResult {
 
     private String flowName;
+    private String flowId;
     private Date flowStartTime;
     private Date flowEndTime;
     private FlowStatus status;
     private List<FlowActionResult> actionResultList;
     private Exception error;
     private String errorMessage;
+
+    public String getFlowId() {
+        return flowId;
+    }
+
+    public void setFlowId(String flowId) {
+        this.flowId = flowId;
+    }
 
     public String getErrorMessage() {
         return errorMessage;

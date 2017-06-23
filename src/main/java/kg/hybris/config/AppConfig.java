@@ -1,6 +1,8 @@
 package kg.hybris.config;
 
 import kg.hybris.flows.GuestCheckoutFlow;
+import kg.hybris.services.PDFScreenshotReportingService;
+import kg.hybris.services.ScreenshotReportingService;
 import kg.hybris.setup.DefaultHybrisBrowser;
 import kg.hybris.setup.HybrisBrowser;
 import org.openqa.selenium.WebDriver;
@@ -55,6 +57,15 @@ public class AppConfig {
     {
         return new GuestCheckoutFlow();
     }
+
+    @Bean
+    public ScreenshotReportingService screenshotReportingService()
+    {
+        return new ScreenshotReportingService();
+    }
+
+    @Bean
+    public PDFScreenshotReportingService pDFScreenshotReportingService(){return new PDFScreenshotReportingService();}
 
 
 }

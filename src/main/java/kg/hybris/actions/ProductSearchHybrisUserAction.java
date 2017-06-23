@@ -30,6 +30,7 @@ public class ProductSearchHybrisUserAction extends AbstractHybrisUserAction impl
         {
             searchTextBox .sendKeys(productSearchTerm);
             Thread.sleep(2000);
+            getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
             browser.findElement(By.name("search_form_SearchBox")).submit();
         }
 

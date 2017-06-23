@@ -41,6 +41,7 @@ public class NavigateToCartFromMiniCartLinkPageHybrisUserAction extends Abstract
             js.executeScript("$('.js-mini-cart-link').click();");
             WebDriverWait wait = new WebDriverWait(browser, 10000);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("colorbox")));
+            getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
             Thread.sleep(2000);
             browser.get(getHybrisBrowser().getHOST()+getHybrisBrowser().getContextPath()+getCartPageURL());
             WebDriverWait waitForCartHeader = new WebDriverWait(browser, 10000);

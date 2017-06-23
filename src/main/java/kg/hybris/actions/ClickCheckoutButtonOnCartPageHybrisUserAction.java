@@ -29,6 +29,7 @@ public class ClickCheckoutButtonOnCartPageHybrisUserAction extends AbstractHybri
         WebElement checkoutLink= browser.findElement(By.className("js-continue-checkout-button"));
         if(checkoutLink!=null)
         {
+            getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
             checkoutLink.click();
             WebDriverWait wait = new WebDriverWait(browser, 5000);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("checkout-login-right-content-component")));

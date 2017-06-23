@@ -14,13 +14,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class GuestCheckoutFlow extends  AbstractHybrisFlow implements  HybrisFlow{
 
     private static final Logger LOG = Logger.getLogger(GuestCheckoutFlow.class);
-    @Autowired
-    @Qualifier("sampleShippingAddress")
-    Address shippingAddress;
 
-    @Autowired
-    @Qualifier("samplePaymentInfo")
-    Payment payment;
 
     public void performFlow(HybrisBrowser hybrisBrowser)throws Exception
     {

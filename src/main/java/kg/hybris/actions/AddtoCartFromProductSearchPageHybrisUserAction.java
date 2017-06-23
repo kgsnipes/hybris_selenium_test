@@ -38,9 +38,11 @@ public class AddtoCartFromProductSearchPageHybrisUserAction extends AbstractHybr
                 if(addTOCartButton!=null && addTOCartButton.isEnabled())
                 {
                     addTOCartButton.click();
+
                     WebDriverWait wait = new WebDriverWait(browser, 5000);
                     wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("colorbox")));
                     browser.findElement(By.id("cboxClose")).click();
+                    getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
                 }
                 --productsTOAdd;
             }

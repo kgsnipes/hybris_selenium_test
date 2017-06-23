@@ -41,8 +41,11 @@ public class AddGuestShippingAddressForCheckoutUserAction extends AbstractHybris
             browser.findElement(By.name("townCity")) .sendKeys(this.address.getCity());
             browser.findElement(By.name("postcode")) .sendKeys(this.address.getZip());
             browser.findElement(By.name("phone")) .sendKeys(this.address.getPhone());
+
+            getHybrisBrowser().getScreenshotReportingService().saveScreenshot(getHybrisBrowser(),this);
             browser.findElement(By.id("addressSubmit")).click();
             //guestCheckoutShippingAddressForm.submit();
+
             WebDriverWait waitForShippingMethod = new WebDriverWait(browser, 5000);
             waitForShippingMethod.until(ExpectedConditions.visibilityOfElementLocated(By.id("selectDeliveryMethodForm")));
 

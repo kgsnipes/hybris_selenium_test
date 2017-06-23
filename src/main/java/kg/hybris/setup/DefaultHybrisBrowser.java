@@ -2,7 +2,9 @@ package kg.hybris.setup;
 
 import kg.hybris.actions.HybrisUserAction;
 import kg.hybris.flows.HybrisFlow;
+import kg.hybris.services.ScreenshotReportingService;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,8 +28,12 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
     @Autowired
     private WebDriver chromeDriver;
 
-    private boolean isMaximized=false;
+    @Autowired
+    private ScreenshotReportingService screenshotReportingService;
+
+    private boolean isModeSet=false;
     private HybrisFlow flow;
+    private BrowserDisplayMode mode;
 
     public Long getSleepInterval() {
         return sleepInterval;
@@ -37,12 +43,12 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
         this.sleepInterval = sleepInterval;
     }
 
-    public boolean isMaximized() {
-        return isMaximized;
+    public boolean isModeSet() {
+        return isModeSet;
     }
 
-    public void setMaximized(boolean maximized) {
-        isMaximized = maximized;
+    public void setisModeSet(boolean isModeSet) {
+        this.isModeSet = isModeSet;
     }
 
     public String getContextPath() {
@@ -73,10 +79,34 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
     }
 
     public HybrisBrowser executeAction(HybrisUserAction userAction) throws Exception {
-        if(!this.isMaximized)
+        if(!this.isModeSet)
         {
-            getBrowser().manage().window().maximize();
-            this.isMaximized=!this.isMaximized;
+            if(this.mode!=null)
+            {
+                Dimension d=null;
+                switch (this.mode)
+                {
+                    case MOBILE:
+                        d = new Dimension(640,960);
+                        //Resize the current window to the given dimension
+                        getBrowser().manage().window().setSize(d);
+
+                        break;
+                    case TABLET:
+                        d = new Dimension(1024,600);
+                        //Resize the current window to the given dimension
+                        getBrowser().manage().window().setSize(d);
+                        break;
+                    default:
+                        getBrowser().manage().window().maximize();
+                            break;
+                }
+            }
+            else {
+                getBrowser().manage().window().maximize();
+                this.mode=BrowserDisplayMode.DESKTOP;
+            }
+            this.isModeSet=!this.isModeSet;
         }
         try {
             userAction.setHybrisBrowser(this);
@@ -84,8 +114,10 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
 
             LOG.info(userAction.getName() + " Action is executing");
             userAction.preActionActivities();
+            screenshotReportingService.saveScreenshot(this,userAction);
             userAction.perform();
             userAction.postActionActivities();
+
             LOG.info(userAction.getName() + " Action execution ended");
 
         }
@@ -103,6 +135,23 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
         return this;
     }
 
+    public ScreenshotReportingService getScreenshotReportingService() {
+        return screenshotReportingService;
+    }
+
+    public BrowserDisplayMode getDisplayMode() {
+        return this.mode;
+    }
+
+    public void setBrowserDisplayMode(BrowserDisplayMode mode) {
+        this.mode=mode;
+        this.isModeSet=false;
+
+    }
+
+    public void setScreenshotReportingService(ScreenshotReportingService screenshotReportingService) {
+        this.screenshotReportingService = screenshotReportingService;
+    }
 
 
 }
