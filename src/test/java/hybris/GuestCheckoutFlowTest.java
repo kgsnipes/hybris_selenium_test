@@ -33,7 +33,7 @@ public class GuestCheckoutFlowTest {
     @Test
     public void performGuestCheckoutFlowTest()throws Exception
     {
-        hybrisBrowser.setFlow(guestCheckoutFlow);
+
         guestCheckoutFlow.performFlow(hybrisBrowser);
         Gson gson = new Gson();
         LOG.info( gson.toJson(guestCheckoutFlow.getFlowResult()));

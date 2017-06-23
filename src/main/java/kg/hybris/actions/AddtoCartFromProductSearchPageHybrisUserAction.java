@@ -1,6 +1,5 @@
 package kg.hybris.actions;
 
-import kg.hybris.setup.HybrisBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +12,7 @@ import java.util.List;
 /**
  * Created by kaushik on 6/18/2017.
  */
+
 public class AddtoCartFromProductSearchPageHybrisUserAction extends AbstractHybrisUserAction implements HybrisUserAction {
 
 

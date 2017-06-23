@@ -2,17 +2,9 @@ package kg.hybris.actions;
 
 import kg.hybris.dto.ActionStatus;
 import kg.hybris.dto.FlowActionResult;
-import kg.hybris.dto.FlowStatus;
-import kg.hybris.dto.HybrisFlowResult;
 import kg.hybris.setup.HybrisBrowser;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 /**

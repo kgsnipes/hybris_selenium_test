@@ -1,7 +1,6 @@
 package kg.hybris.actions;
 
 import kg.hybris.dto.FlowActionResult;
-import kg.hybris.dto.HybrisFlowResult;
 import kg.hybris.setup.HybrisBrowser;
 
 /**

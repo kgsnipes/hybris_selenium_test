@@ -2,23 +2,17 @@ package kg.hybris.setup;
 
 import kg.hybris.actions.HybrisUserAction;
 import kg.hybris.flows.HybrisFlow;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.internal.ProfilesIni;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by kaushik on 6/18/2017.
  */
 public class DefaultHybrisBrowser implements HybrisBrowser {
 
+    private static final Logger LOG = Logger.getLogger(DefaultHybrisBrowser.class);
 
     @Value("${hybrisbrowser.storefront.host}")
     private String HOST;
@@ -86,12 +80,23 @@ public class DefaultHybrisBrowser implements HybrisBrowser {
         }
         try {
             userAction.setHybrisBrowser(this);
+            userAction.createHybrisActionResult(userAction.getName());
+
+            LOG.info(userAction.getName() + " Action is executing");
+            userAction.preActionActivities();
             userAction.perform();
+            userAction.postActionActivities();
+            LOG.info(userAction.getName() + " Action execution ended");
+
         }
         catch (Exception ex)
         {
-            System.out.println("------------------ Failed at "+userAction.getName()+" ------------------");
-            throw ex;
+            LOG.error(userAction.getName() + " Encountered an Exception");
+            userAction.actionFailureActivites(ex);
+           throw ex;
+        }
+        finally {
+           getFlow().getFlowResult().getActionResultList().add(userAction.getActionResult());
         }
         Thread.sleep(getSleepInterval());
 

@@ -3,6 +3,7 @@ package kg.hybris.flows;
 import kg.hybris.dto.FlowActionResult;
 import kg.hybris.dto.FlowStatus;
 import kg.hybris.dto.HybrisFlowResult;
+import kg.hybris.setup.HybrisBrowser;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -62,4 +63,10 @@ public abstract class AbstractHybrisFlow implements HybrisFlow {
     public HybrisFlowResult getFlowResult(){
         return this.flowResult;
     }
+
+    public void performFlow(HybrisBrowser browser)throws Exception{
+        browser.setFlow(this);
+    }
+
+
 }
