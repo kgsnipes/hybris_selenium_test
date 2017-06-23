@@ -3,6 +3,7 @@ package kg.hybris.config;
 import kg.hybris.actions.AbstractHybrisUserAction;
 import kg.hybris.dto.FlowStatus;
 import kg.hybris.flows.HybrisFlow;
+import kg.hybris.setup.HybrisBrowser;
 import org.apache.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -16,6 +17,7 @@ import java.util.Arrays;
  */
 
 @Aspect
+@Component
 public class FlowAspect {
 
     private static final Logger LOG = Logger.getLogger(FlowAspect.class);
@@ -28,6 +30,12 @@ public class FlowAspect {
        {
            HybrisFlow flow= (HybrisFlow) pjp.getThis();
            flow.createHybrisFlowResult(flow.getName());
+           HybrisBrowser browser=null;
+           if(pjp.getArgs()[0] instanceof HybrisBrowser)
+           {
+                browser= (HybrisBrowser) pjp.getArgs()[0];
+           }
+
            try
            {
                LOG.info(flow.getName()+" Flow is executing");
@@ -41,6 +49,8 @@ public class FlowAspect {
            {
                LOG.error(flow.getName()+" Encountered an Exception");
                flow.flowFailureActivites(ex);
+               if(browser!=null){browser.getBrowser().close();}
+
            }
            finally {
 

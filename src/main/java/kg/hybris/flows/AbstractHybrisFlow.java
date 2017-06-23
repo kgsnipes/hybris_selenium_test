@@ -18,6 +18,9 @@ public abstract class AbstractHybrisFlow implements HybrisFlow {
     private HybrisFlowResult flowResult;
 
     public String getName() {
+        if (StringUtils.isEmpty(this.name)){
+        this.name=this.getClass().getSimpleName();
+        }
         return name;
     }
 
@@ -26,9 +29,9 @@ public abstract class AbstractHybrisFlow implements HybrisFlow {
     }
 
     public void preFlowActivities()  {
-        if(StringUtils.isEmpty(this.getName()))
+        if(StringUtils.isEmpty(getName()))
         {
-            this.setName(this.getClass().getSimpleName()+"_"+System.currentTimeMillis());
+            setName(this.getClass().getSimpleName()+"_"+System.currentTimeMillis());
         }
         getFlowResult().setStatus(FlowStatus.RUNNING);
         flowResult.setFlowStartTime(new Date());
@@ -36,7 +39,8 @@ public abstract class AbstractHybrisFlow implements HybrisFlow {
 
     public void postFlowActivities()  {
         this.flowResult.setFlowEndTime(new Date());
-
+        getFlowResult().setStatus(FlowStatus.COMPLETED);
+        this.flowResult.setFlowEndTime(new Date());
     }
 
     public void flowFailureActivites(Exception ex) {

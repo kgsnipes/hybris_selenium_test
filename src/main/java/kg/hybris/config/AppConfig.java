@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Configuration
 @ComponentScan(basePackages = { "kg.hybris.*" })
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 @PropertySource("classpath:hybristester.properties")
 public class AppConfig {
 

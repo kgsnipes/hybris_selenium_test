@@ -14,12 +14,13 @@ import org.springframework.stereotype.Component;
  */
 
 @Aspect
+@Component
 public class ActionAspect {
 
-    private static final Logger LOG = Logger.getLogger(FlowAspect.class);
+    private static final Logger LOG = Logger.getLogger(ActionAspect.class);
 
     @Around("execution(* kg.hybris.actions.*.perform(..))")
-    public void aroundPerformFlow(ProceedingJoinPoint pjp) throws Throwable {
+    public void aroundActionPerform(ProceedingJoinPoint pjp) throws Throwable {
 
 
         if (pjp.getThis() instanceof HybrisUserAction) {
@@ -35,6 +36,7 @@ public class ActionAspect {
             } catch (Exception ex) {
                 LOG.error(action.getName() + " Encountered an Exception");
                 action.actionFailureActivites(ex);
+                throw ex;
             } finally {
 
                 action.getHybrisBrowser().getFlow().getFlowResult().getActionResultList().add(action.getActionResult());
